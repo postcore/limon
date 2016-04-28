@@ -5,8 +5,6 @@
  * Released under the MIT license.
  */
 
-/* jshint asi:true */
-
 'use strict'
 
 var limon = require('./index')
