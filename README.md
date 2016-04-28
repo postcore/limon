@@ -2,7 +2,7 @@
 
 > The pluggable JavaScript lexer on per character basis.
 
-[![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
+[![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
 
 ## Install
 ```
@@ -74,9 +74,6 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [license-url]: https://github.com/limonjs/limon/blob/master/LICENSE
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
-
-[codeclimate-url]: https://codeclimate.com/github/limonjs/limon
-[codeclimate-img]: https://img.shields.io/codeclimate/github/limonjs/limon.svg
 
 [travis-url]: https://travis-ci.org/limonjs/limon
 [travis-img]: https://img.shields.io/travis/limonjs/limon/master.svg
