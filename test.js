@@ -12,22 +12,10 @@
 var limon = require('./index')
 
 limon
-  .use(function prevNext (app) {
-    return function (ch, i, input) {
-      app.prev = function prev (pos) {
-        pos = pos || 1
-        return input[i - pos]
-      }
-      app.next = function next (pos) {
-        pos = pos || 1
-        return input[i + pos]
-      }
-    }
-  })
   .use(function (app) {
     return function (ch, i, input) {
-      // console.log('prev is:', this.prev())
-      // console.log('next is:', this.next())
+      console.log('prev is:', this.prev())
+      console.log('next is:', this.next())
 
       if (/\s/.test(ch)) {
         this.tokens.push(['whitespace', ch, i])

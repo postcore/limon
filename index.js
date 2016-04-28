@@ -7,19 +7,18 @@
 
 'use strict'
 
-var isObject = require('isobject')
-var isArray = require('isarray')
-var extend = require('extend-shallow')
+var utils = require('./utils')
 
 function Limon (input, options) {
   if (!(this instanceof Limon)) {
-    return new Limon(input)
+    return new Limon(input, options)
   }
 
-  this.options = isObject(options) ? options : {}
-  this.plugins = isArray(this.options.plugins) ? this.options.plugins : []
-  this.tokens = isArray(this.options.tokens) ? this.options.tokens : []
+  this.options = utils.isObject(options) ? options : {}
+  this.plugins = utils.isArray(this.options.plugins) ? this.options.plugins : []
+  this.tokens = utils.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
+  this.use(utils.limonPrevNext())
 }
 
 Limon.prototype.use = function use (fn) {
@@ -48,12 +47,12 @@ Limon.prototype.run = function run () {
 }
 
 Limon.prototype.tokenize = function tokenize (input, options) {
-  if (isObject(input)) {
+  if (utils.isObject(input)) {
     options = input
     input = null
   }
 
-  this.options = extend(this.options, options)
+  this.options = utils.extend(this.options, options)
   this.input = typeof input === 'string' ? input : this.input
 
   if (this.input.length === 0) {
