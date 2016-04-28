@@ -13,6 +13,10 @@ function Limon (input, options) {
   if (!(this instanceof Limon)) {
     return new Limon(input, options)
   }
+  if (utils.isObject(input)) {
+    options = input
+    input = null
+  }
 
   this.options = utils.isObject(options) ? options : {}
   this.plugins = utils.isArray(this.options.plugins) ? this.options.plugins : []
