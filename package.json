@@ -1,0 +1,52 @@
+{
+  "name": "limon",
+  "version": "0.1.0",
+  "description": "The pluggable JavaScript lexer on per character basis.",
+  "repository": "tunnckoCore/limon",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "precommit.silent": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "isarray": "^1.0.0",
+    "isobject": "^2.1.0"
+  },
+  "devDependencies": {
+    "assertit": "^0.1.0",
+    "pre-commit": "*"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "basis",
+    "char",
+    "character",
+    "extendable",
+    "extensible",
+    "js",
+    "lex",
+    "lexer",
+    "limon",
+    "per",
+    "per-char",
+    "per-character",
+    "pluggable",
+    "plugins",
+    "powerful",
+    "string",
+    "text",
+    "useful"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ]
+  }
+}
