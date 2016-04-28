@@ -65,7 +65,7 @@ console.log(tokens)
 ```
 
 ## Contributing
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/limon/issues/new).  
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/limonjs/limon/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
 
 ## [Charlike Make Reagent](http://j.mp/1stW47C) [![new message to charlike][new-message-img]][new-message-url] [![freenode #charlike][freenode-img]][freenode-url]
@@ -79,20 +79,20 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [npmjs-url]: https://www.npmjs.com/package/limon
 [npmjs-img]: https://img.shields.io/npm/v/limon.svg?label=limon
 
-[license-url]: https://github.com/tunnckoCore/limon/blob/master/LICENSE
+[license-url]: https://github.com/limonjs/limon/blob/master/LICENSE
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
 
-[codeclimate-url]: https://codeclimate.com/github/tunnckoCore/limon
-[codeclimate-img]: https://img.shields.io/codeclimate/github/tunnckoCore/limon.svg
+[codeclimate-url]: https://codeclimate.com/github/limonjs/limon
+[codeclimate-img]: https://img.shields.io/codeclimate/github/limonjs/limon.svg
 
-[travis-url]: https://travis-ci.org/tunnckoCore/limon
-[travis-img]: https://img.shields.io/travis/tunnckoCore/limon/master.svg
+[travis-url]: https://travis-ci.org/limonjs/limon
+[travis-img]: https://img.shields.io/travis/limonjs/limon/master.svg
 
-[coveralls-url]: https://coveralls.io/r/tunnckoCore/limon
-[coveralls-img]: https://img.shields.io/coveralls/tunnckoCore/limon.svg
+[coveralls-url]: https://coveralls.io/r/limonjs/limon
+[coveralls-img]: https://img.shields.io/coveralls/limonjs/limon.svg
 
-[david-url]: https://david-dm.org/tunnckoCore/limon
-[david-img]: https://img.shields.io/david/tunnckoCore/limon.svg
+[david-url]: https://david-dm.org/limonjs/limon
+[david-img]: https://img.shields.io/david/limonjs/limon.svg
 
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg

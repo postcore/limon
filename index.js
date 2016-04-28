@@ -1,5 +1,5 @@
 /*!
- * limon <https://github.com/tunnckoCore/limon>
+ * limon <https://github.com/limonjs/limon>
  *
  * Copyright (c) 2016 Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)
  * Released under the MIT license.
