@@ -14,19 +14,10 @@ npm i limon --save
 
 ```js
 const limon = require('limon')
+const prevNext = require('limon-prev-next')
+
 limon
-  .use(function prevNext (app) {
-    return function (ch, i, input) {
-      app.prev = function prev (pos) {
-        pos = pos || 1
-        return input[i - pos]
-      }
-      app.next = function next (pos) {
-        pos = pos || 1
-        return input[i + pos]
-      }
-    }
-  })
+  .use(prevNext())
   .use(function (app) {
     return function (ch, i, input) {
       // console.log('prev is:', this.prev())
@@ -64,6 +55,10 @@ console.log(tokens)
 //   [ 'symbol', ')', 10 ] ]
 ```
 
+## Related
+* [limon-prev-next](https://www.npmjs.com/package/limon-prev-next): Plugin for [limon][] pluggable lexer that adds `prev` and `next` methods. | [homepage](https://github.com/limonjs/limon-prev-next)
+* [postjson](https://www.npmjs.com/package/postjson): Transforming JSON with plugins. | [homepage](https://github.com/postjson/postjson)
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/limonjs/limon/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
@@ -72,9 +67,7 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [![tunnckoCore.tk][author-www-img]][author-www-url] [![keybase tunnckoCore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
 
-[extend-shallow]: https://github.com/jonschlinkert/extend-shallow
-[isarray]: https://github.com/juliangruber/isarray
-[isobject]: https://github.com/jonschlinkert/isobject
+[limon]: https://github.com/limonjs/limon
 
 [npmjs-url]: https://www.npmjs.com/package/limon
 [npmjs-img]: https://img.shields.io/npm/v/limon.svg?label=limon

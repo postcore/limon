@@ -46,10 +46,23 @@
     "useful"
   ],
   "verb": {
+    "run": true,
     "toc": false,
     "layout": "empty",
     "tasks": [
       "readme"
-    ]
+    ],
+    "related": {
+      "list": [
+        "limon-prev-next",
+        "postjson"
+      ]
+    },
+    "reflinks": [
+      "limon"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
