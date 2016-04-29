@@ -7,7 +7,7 @@
 
 'use strict'
 
-var utils = require('./utils')
+var lazy = require('./utils')
 
 /**
  * > Initialize `Limon` with `input` and `options`.
@@ -34,16 +34,16 @@ function Limon (input, options) {
   if (!(this instanceof Limon)) {
     return new Limon(input, options)
   }
-  if (utils.isObject(input)) {
+  if (lazy.utils.isObject(input)) {
     options = input
     input = null
   }
 
-  this.options = utils.isObject(options) ? options : {}
-  this.plugins = utils.arr.arrayify(this.options.plugins)
-  this.tokens = utils.arr.isArray(this.options.tokens) ? this.options.tokens : []
+  this.options = lazy.utils.isObject(options) ? options : {}
+  this.plugins = lazy.utils.arrayify(this.options.plugins)
+  this.tokens = lazy.utils.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
-  this.use(utils.plugin.prevNext())
+  this.use(lazy.plugin.prevNext())
 }
 
 Limon.prototype.use = function use (fn) {
@@ -69,11 +69,11 @@ Limon.prototype.run = function run () {
 }
 
 Limon.prototype.tokenize = function tokenize (input, options) {
-  if (utils.isObject(input)) {
+  if (lazy.utils.isObject(input)) {
     options = input
     input = null
   }
-  this.options = utils.extend(this.options, options)
+  this.options = lazy.utils.extend(this.options, options)
   this.input = typeof input === 'string' ? input : this.input
 
   if (this.input.length === 0) {

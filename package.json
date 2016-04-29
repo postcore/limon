@@ -11,14 +11,13 @@
     "test": "standard && node test.js"
   },
   "dependencies": {
-    "extend-shallow": "^2.0.1",
-    "isobject": "^2.1.0",
-    "lazy-arrayify": "^1.0.0",
     "lazy-cache": "^2.0.0",
+    "lazy-utils": "^1.0.0",
     "limon-prev-next": "^1.0.0"
   },
   "devDependencies": {
     "assertit": "^0.1.0",
+    "isarray": "^1.0.0",
     "pre-commit": "*"
   },
   "files": [

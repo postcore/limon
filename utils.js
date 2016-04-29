@@ -24,9 +24,7 @@ require = utils // eslint-disable-line no-undef, no-native-reassign
  * Lazily required module dependencies
  */
 
-require('extend-shallow', 'extend')
-require('isobject', 'isObject')
-require('lazy-arrayify', 'arr')
+require('lazy-utils', 'utils')
 require('limon-prev-next', 'plugin.prevNext')
 
 /**
