@@ -1,4 +1,4 @@
-# [limon][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
+# [limon][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] [![npm downloads][downloads-img]][downloads-url] 
 
 > The pluggable JavaScript lexer on per character basis.
 
@@ -92,7 +92,10 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [npmjs-img]: https://img.shields.io/npm/v/limon.svg?label=limon
 
 [license-url]: https://github.com/limonjs/limon/blob/master/LICENSE
-[license-img]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-img]: https://img.shields.io/npm/l/limon.svg
+
+[downloads-url]: https://www.npmjs.com/package/limon
+[downloads-img]: https://img.shields.io/npm/dm/limon.svg
 
 [travis-url]: https://travis-ci.org/limonjs/limon
 [travis-img]: https://img.shields.io/travis/limonjs/limon/master.svg
