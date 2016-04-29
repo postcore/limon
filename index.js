@@ -40,8 +40,8 @@ function Limon (input, options) {
   }
 
   this.options = utils.isObject(options) ? options : {}
-  this.plugins = utils.arrayify(this.options.plugins)
-  this.tokens = utils.isArray(this.options.tokens) ? this.options.tokens : []
+  this.plugins = utils.arr.arrayify(this.options.plugins)
+  this.tokens = utils.arr.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
   this.use(utils.plugin.prevNext())
 }

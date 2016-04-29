@@ -25,8 +25,8 @@ require = utils // eslint-disable-line no-undef, no-native-reassign
  */
 
 require('extend-shallow', 'extend')
-require('isarray', 'isArray')
 require('isobject', 'isObject')
+require('lazy-arrayify', 'arr')
 require('limon-prev-next', 'plugin.prevNext')
 
 /**
@@ -34,12 +34,6 @@ require('limon-prev-next', 'plugin.prevNext')
  */
 
 require = fn // eslint-disable-line no-undef, no-native-reassign
-
-utils.arrayify = function arrayify (val) {
-  if (!val) return []
-  if (!utils.isArray(val)) return [val]
-  return val
-}
 
 /**
  * Expose `utils` modules
