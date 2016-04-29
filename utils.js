@@ -27,7 +27,7 @@ require = utils // eslint-disable-line no-undef, no-native-reassign
 require('extend-shallow', 'extend')
 require('isarray', 'isArray')
 require('isobject', 'isObject')
-require('limon-prev-next')
+require('limon-prev-next', 'plugin.prevNext')
 
 /**
  * Restore `require`

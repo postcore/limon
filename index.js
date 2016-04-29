@@ -22,7 +22,7 @@ function Limon (input, options) {
   this.plugins = utils.isArray(this.options.plugins) ? this.options.plugins : []
   this.tokens = utils.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
-  this.use(utils.limonPrevNext())
+  this.use(utils.plugin.prevNext())
 }
 
 Limon.prototype.use = function use (fn) {
