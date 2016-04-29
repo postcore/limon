@@ -55,6 +55,25 @@ console.log(tokens)
 //   [ 'symbol', ')', 10 ] ]
 ```
 
+### [Limon](index.js#L33)
+> Initialize `Limon` with `input` and `options`. Both are completely optional. You can pass plugins and tokens to `options`.
+
+**Params**
+
+* `input` **{String}**: String value to tokenize, or if object it is assumed `options`.    
+* `options` **{Object}**: Optional options, use it to pass plugins or tokens.    
+
+**Example**
+
+```js
+var Limon = require('limon').Limon
+var lexer = new Limon('foo bar')
+
+// or pass only options
+var limon = new Limon({ foo: 'bar' })
+var tokens = limon.tokenize('baz qux')
+```
+
 ## Related
 * [limon-prev-next](https://www.npmjs.com/package/limon-prev-next): Plugin for [limon][] pluggable lexer that adds `prev` and `next` methods. | [homepage](https://github.com/limonjs/limon-prev-next)
 * [postjson](https://www.npmjs.com/package/postjson): Transforming JSON with plugins. | [homepage](https://github.com/postjson/postjson)

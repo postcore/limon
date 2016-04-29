@@ -9,6 +9,27 @@
 
 var utils = require('./utils')
 
+/**
+ * > Initialize `Limon` with `input` and `options`.
+ * Both are completely optional. You can pass plugins
+ * and tokens to `options`.
+ *
+ * **Example**
+ *
+ * ```js
+ * var Limon = require('limon').Limon
+ * var lexer = new Limon('foo bar')
+ *
+ * // or pass only options
+ * var limon = new Limon({ foo: 'bar' })
+ * var tokens = limon.tokenize('baz qux')
+ * ```
+ *
+ * @param {String} `input` String value to tokenize, or if object it is assumed `options`.
+ * @param {Object} `options` Optional options, use it to pass plugins or tokens.
+ * @api public
+ */
+
 function Limon (input, options) {
   if (!(this instanceof Limon)) {
     return new Limon(input, options)
@@ -19,7 +40,7 @@ function Limon (input, options) {
   }
 
   this.options = utils.isObject(options) ? options : {}
-  this.plugins = utils.isArray(this.options.plugins) ? this.options.plugins : []
+  this.plugins = utils.arrayify(this.options.plugins)
   this.tokens = utils.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
   this.use(utils.plugin.prevNext())
@@ -31,11 +52,9 @@ Limon.prototype.use = function use (fn) {
   }
 
   fn = fn.call(this, this)
-
   if (typeof fn === 'function') {
     this.plugins.push(fn)
   }
-
   return this
 }
 
@@ -46,7 +65,6 @@ Limon.prototype.run = function run () {
   while (i < len) {
     this.plugins[i++].apply(this, arguments)
   }
-
   return this
 }
 
@@ -55,7 +73,6 @@ Limon.prototype.tokenize = function tokenize (input, options) {
     options = input
     input = null
   }
-
   this.options = utils.extend(this.options, options)
   this.input = typeof input === 'string' ? input : this.input
 
@@ -70,7 +87,6 @@ Limon.prototype.tokenize = function tokenize (input, options) {
     this.run(this.input[i], i, this.input)
     i++
   }
-
   return this.tokens
 }
 
