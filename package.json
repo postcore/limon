@@ -13,7 +13,7 @@
   "dependencies": {
     "extend-shallow": "^2.0.1",
     "isobject": "^2.1.0",
-    "lazy-arrayify": "^1.0.0",
+    "lazy-arrayify": "^1.0.1",
     "lazy-cache": "^2.0.0",
     "limon-prev-next": "^1.0.0"
   },
