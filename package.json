@@ -54,11 +54,19 @@
     "related": {
       "list": [
         "limon-prev-next",
-        "postjson"
+        "postjson",
+        "lazy-cache",
+        "lazy-utils",
+        "lazy-arrayify"
       ]
     },
     "reflinks": [
-      "limon"
+      "limon",
+      "lazy-cache",
+      "browserify",
+      "extend-shallow",
+      "isobject",
+      "is-extendable"
     ],
     "lint": {
       "reflinks": true

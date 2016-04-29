@@ -75,6 +75,9 @@ var tokens = limon.tokenize('baz qux')
 ```
 
 ## Related
+* [lazy-arrayify](https://www.npmjs.com/package/lazy-arrayify): We are lazy, also [lazy-cache][]d and [browserify][]-ready - just arrayify, falsey values… [more](https://www.npmjs.com/package/lazy-arrayify) | [homepage](https://github.com/tunnckocore/lazy-arrayify)
+* [lazy-cache](https://www.npmjs.com/package/lazy-cache): Cache requires to be lazy-loaded when needed. | [homepage](https://github.com/jonschlinkert/lazy-cache)
+* [lazy-utils](https://www.npmjs.com/package/lazy-utils): Most of the used mostly everywhere utils: [extend-shallow][], [isobject][], [is-extendable][] (used in… [more](https://www.npmjs.com/package/lazy-utils) | [homepage](https://github.com/tunnckocore/lazy-utils)
 * [limon-prev-next](https://www.npmjs.com/package/limon-prev-next): Plugin for [limon][] pluggable lexer that adds `prev` and `next` methods. | [homepage](https://github.com/limonjs/limon-prev-next)
 * [postjson](https://www.npmjs.com/package/postjson): Transforming JSON with plugins. | [homepage](https://github.com/postjson/postjson)
 
@@ -87,6 +90,11 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [![tunnckoCore.tk][author-www-img]][author-www-url] [![keybase tunnckoCore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
 
 [limon]: https://github.com/limonjs/limon
+[lazy-cache]: https://github.com/jonschlinkert/lazy-cache
+[browserify]: https://github.com/substack/node-browserify
+[extend-shallow]: https://github.com/jonschlinkert/extend-shallow
+[isobject]: https://github.com/jonschlinkert/isobject
+[is-extendable]: https://github.com/jonschlinkert/is-extendable
 
 [npmjs-url]: https://www.npmjs.com/package/limon
 [npmjs-img]: https://img.shields.io/npm/v/limon.svg?label=limon
