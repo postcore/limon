@@ -38,7 +38,11 @@ function Limon (input, options) {
     options = input
     input = null
   }
-  lazy.use(this)
+  lazy.use(this, {
+    fn: function (app, options) {
+      this.options = lazy.utils.extend(this.options, options)
+    }
+  })
 
   this.options = lazy.utils.isObject(options) ? options : {}
   this.plugins = lazy.utils.arrayify(this.options.plugins)
