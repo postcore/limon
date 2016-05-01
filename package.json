@@ -18,7 +18,8 @@
   "devDependencies": {
     "assertit": "^0.1.0",
     "isarray": "^1.0.0",
-    "pre-commit": "*"
+    "pre-commit": "*",
+    "semver": "^5.1.0"
   },
   "files": [
     "index.js",
