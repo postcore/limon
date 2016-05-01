@@ -30,3 +30,39 @@ exports.parseToken = function parseToken () {
     }
   }
 }
+
+exports.semver = function semver () {
+  return function (app) {
+    app
+      .use(function () {
+        return function () {
+          this.token('space', /\s/)
+          this.token('dot', /\./)
+          this.token('digit', /\d/)
+          this.token('dash', /-/)
+          this.token('plus', /\+/)
+        }
+      })
+      .use(function () {
+        return function (ch) {
+          // we should do something for
+          // previously used regexes?
+          if (/[\s.\d\-\+]/.test(ch)) return
+          this.token('symbol', /\W/)
+          if (/[\s.\d\-\+\W]/.test(ch)) return
+          this.token('letter', /[a-zA-Z]+/)
+        }
+      })
+      .use(function () {
+        return function (ch, i, input) {
+          // array of the current token,
+          // maybe should be more advanced object
+          // with more metadata or etc:
+          //
+          // console.log(this.current)
+          // console.log(this.prev()) // prev character
+          // console.log(this.next()) // next character
+        }
+      })
+  }
+}

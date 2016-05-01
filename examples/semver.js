@@ -21,40 +21,12 @@ var plugins = require('./plugins')
 limon
   .use(plugins.matcher())
   .use(plugins.parseToken())
-  .use(function () {
-    return function () {
-      this.token('space', /\s/)
-      this.token('dot', /\./)
-      this.token('digit', /\d/)
-      this.token('dash', /-/)
-      this.token('plus', /\+/)
-    }
-  })
-  .use(function () {
-    return function (ch) {
-      // we should do something for
-      // previously used regexes?
-      if (/[\s.\d\-\+]/.test(ch)) return
-      this.token('symbol', /\W/)
-      if (/[\s.\d\-\+\W]/.test(ch)) return
-      this.token('letter', /[a-zA-Z]+/)
-    }
-  })
-  .use(function () {
-    return function () {
-      // array of the current token,
-      // maybe should be more advanced object
-      // with more metadata or etc
-      console.log(this.current)
-      console.log(this.prev()) // prev character
-      console.log(this.next()) // next character
-    }
-  })
+  .use(plugins.semver())
 
 var tokens = limon.tokenize('>= 12.617.33453455-bAB-Cuild+4.57 < 8.9.0')
 
 console.log(tokens)
-console.log(semver.parse('12.617.33453455-bAB-Cuild+4.57'))
+// console.log(semver.parse('12.617.33453455-bAB-Cuild+4.57'))
 
 /**
  * Semver parser
