@@ -26,6 +26,7 @@ require = utils // eslint-disable-line no-undef, no-native-reassign
 
 require('lazy-utils', 'utils')
 require('limon-prev-next', 'plugin.prevNext')
+require('use-ware', 'use')
 
 /**
  * Restore `require`

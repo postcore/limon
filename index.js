@@ -38,34 +38,13 @@ function Limon (input, options) {
     options = input
     input = null
   }
+  lazy.use(this)
 
   this.options = lazy.utils.isObject(options) ? options : {}
   this.plugins = lazy.utils.arrayify(this.options.plugins)
   this.tokens = lazy.utils.isArray(this.options.tokens) ? this.options.tokens : []
   this.input = typeof input === 'string' ? input : ''
   this.use(lazy.plugin.prevNext())
-}
-
-Limon.prototype.use = function use (fn) {
-  if (typeof fn !== 'function') {
-    throw new TypeError('limon.use: expect `fn` be function')
-  }
-
-  fn = fn.call(this, this)
-  if (typeof fn === 'function') {
-    this.plugins.push(fn)
-  }
-  return this
-}
-
-Limon.prototype.run = function run () {
-  var len = this.plugins.length
-  var i = 0
-
-  while (i < len) {
-    this.plugins[i++].apply(this, arguments)
-  }
-  return this
 }
 
 Limon.prototype.tokenize = function tokenize (input, options) {
