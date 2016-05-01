@@ -12,49 +12,15 @@
 var lazy = require('../utils')
 var limon = require('../index')
 var semver = require('semver')
-
-/**
- * Helper plugins.
- */
-
-function matcher () {
-  return function plugin (app) {
-    return function (ch, i, input) {
-      app.match = function match (re) {
-        return re.test(ch) ? ch : null
-      }
-      app.token = function token (name, re) {
-        var m = app.match(re)
-        if (!m) return
-        app.current = [name, ch, i, i + 1]
-        app.tokens.push(app.current)
-      }
-    }
-  }
-}
-
-function parseToken () {
-  return function plugin (app) {
-    app.parseToken = function parseToken (i) {
-      var token = app.tokens[i]
-      return token ? {
-        type: token[0],
-        value: token[1],
-        start: token[2],
-        end: token[3],
-        next: app.parseToken(i + 1)
-      } : {}
-    }
-  }
-}
+var plugins = require('./plugins')
 
 /**
  * Tokenize semver
  */
 
 limon
-  .use(matcher())
-  .use(parseToken())
+  .use(plugins.matcher())
+  .use(plugins.parseToken())
   .use(function () {
     return function () {
       this.token('space', /\s/)

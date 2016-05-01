@@ -10,25 +10,19 @@
 'use strict'
 
 var fs = require('fs')
-// var lazy = require('../utils')
+var lazy = require('../utils')
 var limon = require('../index')
+var plugins = require('./plugins')
 
-function matcher () {
-  return function plugin (app) {
-    return function (ch, i, input) {
-      app.match = function match (re) {
-        return re.test(ch) ? ch : null
-      }
-      app.token = function token (name, re) {
-        var m = app.match(re)
-        if (!m) return
-        app.tokens.push([name, ch, i, i + 1])
-      }
-    }
-  }
-}
+/**
+ * Tokenize CSV as RFC 4180
+ * @see  https://tools.ietf.org/html/rfc4180
+ * @see  https://github.com/parsecsv/csv-spec/blob/draft/README.md
+ */
 
-limon.use(matcher())
+limon
+  .use(plugins.matcher())
+  .use(plugins.parseToken())
   .use(function () {
     return function () {
       this.delimiters = this.delimiters || 0
@@ -55,27 +49,16 @@ var tokens = limon.tokenize(fs.readFileSync('./utf8.csv', 'utf8'))
  * Parsing part, below.
  */
 
-function parseToken (tokens, i) {
-  var token = tokens[i]
-  return token ? {
-    type: token[0],
-    value: token[1],
-    start: token[2],
-    end: token[3],
-    next: parseToken(tokens, i + 1)
-  } : {}
-}
-
 var ast = [{}]
 var len = tokens.length - 1
-var i = -1
+var i = 0
 var fields = []
 var rows = []
 var field = ''
 var row = 0
 
-while (i++ < len) {
-  var token = parseToken(tokens, i)
+while (i < len) {
+  var token = limon.parseToken(i++)
   if (token.type === 'character') {
     field += token.value
   }
@@ -94,4 +77,5 @@ console.log(tokens)
 console.log('=====')
 
 // missing last row...
+// and few other bugs
 console.log(rows)
