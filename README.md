@@ -100,12 +100,12 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [![tunnckoCore.tk][author-www-img]][author-www-url] [![keybase tunnckoCore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
 
-[limon]: https://github.com/limonjs/limon
-[lazy-cache]: https://github.com/jonschlinkert/lazy-cache
 [browserify]: https://github.com/substack/node-browserify
 [extend-shallow]: https://github.com/jonschlinkert/extend-shallow
-[isobject]: https://github.com/jonschlinkert/isobject
 [is-extendable]: https://github.com/jonschlinkert/is-extendable
+[isobject]: https://github.com/jonschlinkert/isobject
+[lazy-cache]: https://github.com/jonschlinkert/lazy-cache
+[limon]: https://github.com/limonjs/limon
 
 [npmjs-url]: https://www.npmjs.com/package/limon
 [npmjs-img]: https://img.shields.io/npm/v/limon.svg?label=limon
@@ -148,4 +148,3 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [new-message-url]: https://github.com/tunnckoCore/ama
 [new-message-img]: https://img.shields.io/badge/ask%20me-anything-green.svg
-

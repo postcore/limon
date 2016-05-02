@@ -55,20 +55,20 @@
     ],
     "related": {
       "list": [
-        "limon-prev-next",
-        "postjson",
+        "lazy-arrayify",
         "lazy-cache",
         "lazy-utils",
-        "lazy-arrayify"
+        "limon-prev-next",
+        "postjson"
       ]
     },
     "reflinks": [
-      "limon",
       "lazy-cache",
       "browserify",
       "extend-shallow",
       "isobject",
-      "is-extendable"
+      "is-extendable",
+      "limon"
     ],
     "lint": {
       "reflinks": true
