@@ -58,6 +58,9 @@ Limon.prototype.tokenize = function tokenize (input, options) {
   }
   this.options = lazy.utils.extend(this.options, options)
   this.input = typeof input === 'string' ? input : this.input
+  this.input = lazy.utils.isBuffer(this.input)
+    ? this.input.toString('utf8')
+    : this.input
 
   if (this.input.length === 0) {
     throw new TypeError('limon.tokenize: expect `input` be non-empty string')
