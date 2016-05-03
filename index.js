@@ -47,7 +47,7 @@ function Limon (input, options) {
   this.options = lazy.utils.isObject(options) ? options : {}
   this.plugins = lazy.utils.arrayify(this.options.plugins)
   this.tokens = lazy.utils.isArray(this.options.tokens) ? this.options.tokens : []
-  this.input = typeof input === 'string' ? input : ''
+  this.input = input
   this.use(lazy.plugin.prevNext())
 }
 
@@ -62,7 +62,7 @@ Limon.prototype.tokenize = function tokenize (input, options) {
     ? this.input.toString('utf8')
     : this.input
 
-  if (this.input.length === 0) {
+  if (!this.input || this.input.length === 0) {
     throw new TypeError('limon.tokenize: expect `input` be non-empty string')
   }
 
