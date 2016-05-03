@@ -1,6 +1,6 @@
 {
   "name": "limon",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "The pluggable JavaScript lexer. Limon = Lemon.",
   "repository": "limonjs/limon",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
