@@ -34,36 +34,36 @@ function Limon (input, options) {
   if (!(this instanceof Limon)) {
     return new Limon(input, options)
   }
-  if (lazy.utils.isObject(input)) {
-    options = input
-    input = null
-  }
+
   lazy.use(this, {
-    fn: function (app, options) {
-      this.options = lazy.utils.extend(this.options, options)
+    fn: function (app, opts) {
+      app.options = lazy.utils.extend(app.options, opts)
     }
   })
 
-  this.options = lazy.utils.isObject(options) ? options : {}
-  this.plugins = lazy.utils.arrayify(this.options.plugins)
-  this.tokens = lazy.utils.isArray(this.options.tokens) ? this.options.tokens : []
-  this.input = input
+  this.defaults(input, options)
   this.use(lazy.plugin.prevNext())
 }
 
-Limon.prototype.tokenize = function tokenize (input, options) {
+Limon.prototype.defaults = function defaults (input, options) {
+  if (lazy.utils.isBuffer(input)) {
+    input = input.toString('utf8')
+  }
   if (lazy.utils.isObject(input)) {
     options = input
     input = null
   }
-  this.options = lazy.utils.extend(this.options, options)
-  this.input = typeof input === 'string' ? input : this.input
-  this.input = lazy.utils.isBuffer(this.input)
-    ? this.input.toString('utf8')
-    : this.input
+  this.options = lazy.utils.extend({}, this.options, options)
+  this.tokens = lazy.utils.isArray(this.tokens) ? this.tokens : []
+  this.input = input || this.input
+  this.input = typeof this.input === 'string' ? this.input : null
+}
+
+Limon.prototype.tokenize = function tokenize (input, options) {
+  this.defaults(input, options)
 
   if (!this.input || this.input.length === 0) {
-    throw new TypeError('limon.tokenize: expect `input` be non-empty string')
+    throw new TypeError('limon.tokenize: expect `input` be non-empty string or buffer')
   }
 
   var len = this.input.length

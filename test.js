@@ -127,3 +127,17 @@ test('should `.tokenize` return array with tokens', function (done) {
   test.deepEqual(tokens[2], ['symbol', '>', 2])
   done()
 })
+
+test('should be able to bass buffer as `input` instead of string', function (done) {
+  var app = new Limon()
+  app
+    .use(function () {
+      return function (ch) {
+        this.tokens.push(ch)
+      }
+    })
+    .tokenize(new Buffer('a,2,c'))
+
+  test.strictEqual(app.tokens.length, 5)
+  done()
+})
