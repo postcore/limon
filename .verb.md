@@ -8,8 +8,9 @@
 This is not finished yet, but go to [examples](./examples) directory and look deeply there. :tada:  
 We have few initial examples:
 
+- [advanced](./examples/advanced.js) - making the lexer to not be "_on per character basis_", by overwriting the `.tokenize` method using plugin.
 - [semver](./examples/semver.js) - tokenize semver string or alike
-- [simple](./examples/simple.js) - tokenizing simple math string (`a > (b + 2)`)
+- [simple](./examples/simple.js) - tokenize simple string (for example: `a > (b + 2)`)
 - [csv](./examples/csv.js) - tokenize CSV string, and partially parsing
 - more upcoming... [going to port](https://github.com/limonjs/limon/issues/7) the [PostCSS Tokenizer](https://github.com/postcss/postcss/blob/master/lib/tokenize.es6)
 
