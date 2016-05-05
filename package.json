@@ -17,8 +17,8 @@
     "use-ware": "^0.3.0"
   },
   "devDependencies": {
-    "assertit": "^0.1.0",
     "isarray": "^1.0.0",
+    "mukla": "^0.3.1",
     "pre-commit": "*",
     "semver": "^5.1.0"
   },

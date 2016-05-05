@@ -7,7 +7,7 @@
 
 'use strict'
 
-var test = require('assertit')
+var test = require('mukla')
 var Limon = require('./index').Limon
 var limon = require('./index')
 var isArray = require('isarray')
