@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "lazy-cache": "^2.0.0",
-    "lazy-utils": "^1.0.1",
+    "lazy-utils": "^1.1.0",
     "limon-prev-next": "^1.0.1",
     "use-ware": "^0.3.0"
   },
